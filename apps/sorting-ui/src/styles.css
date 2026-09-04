@@ -1,5 +1,6 @@
+@source "../../../node_modules/@cloudflare/kumo/dist/**/*.{js,jsx,ts,tsx}";
+@import "@cloudflare/kumo/styles/tailwind";
 @import "tailwindcss";
-@import "@cloudflare/kumo/styles";
 
 :root {
   color: #521000;
@@ -194,6 +195,7 @@ h2 {
 
 .panel {
   position: relative;
+  width: 100%;
   min-width: 0;
   border: 1px solid #ebd5c1;
   background: rgba(255, 253, 251, 0.94);

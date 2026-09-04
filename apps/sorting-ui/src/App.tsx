@@ -1,5 +1,5 @@
 import { startTransition, useState, type FormEvent } from 'react';
-import { Badge, Button, Input, Select, Surface } from '@cloudflare/kumo';
+import { Badge, Button, Input, Select } from '@cloudflare/kumo';
 import { PackageIcon, PlayIcon } from '@phosphor-icons/react';
 import type { ParcelMetadata, RoutingApiResponse, ServiceLevel } from '@monorepo-example/contracts';
 
@@ -140,7 +140,7 @@ export function App() {
       </section>
 
       <section className="workspace">
-        <Surface as="section" className="panel control-panel">
+        <section className="panel control-panel">
           <CornerBrackets />
           <div className="panel-heading">
             <div>
@@ -182,9 +182,9 @@ export function App() {
               </Button>
             </div>
           </form>
-        </Surface>
+        </section>
 
-        <Surface as="section" className="panel flow-panel">
+        <section className="panel flow-panel">
           <CornerBrackets />
           <div className="panel-heading">
             <div>
@@ -232,7 +232,7 @@ export function App() {
               <span className="meter-deadline">2,000 ms</span>
             </div>
           </div>
-        </Surface>
+        </section>
       </section>
 
       <section className="metrics" aria-label="Routing performance">
@@ -254,7 +254,7 @@ export function App() {
         </div>
       </section>
 
-      <Surface as="section" className="panel history-panel">
+      <section className="panel history-panel">
         <CornerBrackets />
         <div className="panel-heading">
           <div>
@@ -294,7 +294,7 @@ export function App() {
             </tbody>
           </table>
         </div>
-      </Surface>
+      </section>
 
       <footer>
         <span>Four Workers. One repository. Independent releases.</span>

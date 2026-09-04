@@ -5,6 +5,6 @@ The React dashboard is served by a Cloudflare Worker with static assets. Request
 From the repository root:
 
 ```sh
-npm run dev:sorting-ui
+npm run dev
 npm run deploy:sorting-ui
 ```
