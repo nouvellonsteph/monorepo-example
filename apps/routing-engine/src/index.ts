@@ -2,8 +2,6 @@ import { env } from 'cloudflare:workers';
 import { parseParcelMetadata } from '@monorepo-example/contracts';
 import { selectRoute } from './routing.ts';
 
-//hello
-
 export default {
   async fetch(request): Promise<Response> {
     const url = new URL(request.url);
