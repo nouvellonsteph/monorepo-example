@@ -7,7 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "wrangler dev -c apps/sorting-api/wrangler.jsonc -c apps/routing-engine/wrangler.jsonc -c apps/operations-events/wrangler.jsonc",
+    "dev": "npm run dev --workspace @monorepo-example/sorting-ui",
+    "dev:api": "wrangler dev -c apps/sorting-api/wrangler.jsonc -c apps/routing-engine/wrangler.jsonc -c apps/operations-events/wrangler.jsonc",
     "demo": "node scripts/demo.mjs",
     "types": "npm run types --workspaces --if-present",
     "typecheck": "tsc -p tsconfig.json && npm run typecheck --workspaces --if-present",
@@ -16,7 +17,8 @@
     "dry-run": "npm run dry-run --workspaces --if-present",
     "deploy:sorting-api": "npm run deploy --workspace @monorepo-example/sorting-api",
     "deploy:routing-engine": "npm run deploy --workspace @monorepo-example/routing-engine",
-    "deploy:operations-events": "npm run deploy --workspace @monorepo-example/operations-events"
+    "deploy:operations-events": "npm run deploy --workspace @monorepo-example/operations-events",
+    "deploy:sorting-ui": "npm run deploy --workspace @monorepo-example/sorting-ui"
   },
   "devDependencies": {
     "@types/node": "24.10.1",

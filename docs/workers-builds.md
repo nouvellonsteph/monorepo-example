@@ -1,16 +1,27 @@
 # Workers Builds setup
 
-Connect [`nouvellonsteph/monorepo-example`](https://github.com/nouvellonsteph/monorepo-example) to three Workers Builds projects. Keep the repository root as the root directory so npm can resolve the workspaces and shared contract.
+Connect [`nouvellonsteph/monorepo-example`](https://github.com/nouvellonsteph/monorepo-example) to four Workers Builds projects. Keep the repository root as the root directory so npm can resolve the workspaces and shared contract.
 
 | Worker project | Root directory | Build command | Deploy command |
 | --- | --- | --- | --- |
 | `monorepo-example-sorting-api` | `/` | `npm run check` | `npm run deploy:sorting-api` |
+| `monorepo-example-sorting-ui` | `/` | `npm run check` | `npm run deploy:sorting-ui` |
 | `monorepo-example-routing-engine` | `/` | `npm run check` | `npm run deploy:routing-engine` |
 | `monorepo-example-operations-events` | `/` | `npm run check` | `npm run deploy:operations-events` |
 
 ## Watch paths
 
 Configure include paths under **Worker > Settings > Build > Build watch paths**.
+
+### sorting-ui
+
+```text
+apps/sorting-ui/**
+packages/contracts/**
+package.json
+package-lock.json
+tsconfig.json
+```
 
 ### sorting-api
 
@@ -45,8 +56,8 @@ tsconfig.json
 The result is an explicit dependency graph:
 
 - A change under one application triggers only that Worker.
-- A shared contract change triggers all three consumers.
-- A root dependency or TypeScript configuration change triggers all three projects.
+- A shared contract change triggers all four consumers.
+- A root dependency or TypeScript configuration change triggers all four projects.
 - Each triggered Worker creates its own build status and deployment history.
 
 Workers Builds uses the Wrangler version pinned in `package-lock.json`; it is the deployment tool for each Worker, not the monorepo orchestrator.
@@ -56,6 +67,7 @@ Workers Builds uses the Wrangler version pinned in `package-lock.json`; it is th
 Each `wrangler.jsonc` enables invocation logs and traces at 100% sampling for the demo. The Workers dashboard therefore exposes separate telemetry for:
 
 - depot-facing request handling in `monorepo-example-sorting-api`;
+- browser requests and API proxying in `monorepo-example-sorting-ui`;
 - routing decisions in `monorepo-example-routing-engine`;
 - asynchronous operational events in `monorepo-example-operations-events`.
 

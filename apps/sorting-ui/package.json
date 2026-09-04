@@ -1,0 +1,30 @@
+{
+  "name": "@monorepo-example/sorting-ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@cloudflare/kumo": "2.13.1",
+    "@monorepo-example/contracts": "*",
+    "@phosphor-icons/react": "2.1.10",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.54.4",
+    "@tailwindcss/vite": "4.3.3",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "5.2.0",
+    "tailwindcss": "4.3.3",
+    "vite": "7.3.6"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "deploy": "vite build && wrangler deploy",
+    "dry-run": "vite build && wrangler deploy --dry-run",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.worker.json",
+    "types": "wrangler types -c wrangler.jsonc"
+  }
+}

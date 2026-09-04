@@ -1,4 +1,4 @@
-const endpoint = process.env.SORTING_API_URL ?? 'http://localhost:8787/route';
+const endpoint = process.env.SORTING_API_URL ?? 'http://localhost:5173/api/route';
 const parcels = [
   ['PKG00000001', '1011AB', 'express'],
   ['PKG00000002', '2511AA', 'standard'],

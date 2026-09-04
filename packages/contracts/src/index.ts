@@ -24,6 +24,17 @@ export interface OperationsEvent {
   timestamp: string;
 }
 
+export interface RoutingApiResponse {
+  requestId: string;
+  parcel: ParcelMetadata;
+  decision: RouteDecision;
+  performance: {
+    decisionMs: number;
+    deadlineMs: number;
+    withinDeadline: boolean;
+  };
+}
+
 export function parseParcelMetadata(value: unknown): ParcelMetadata | null {
   if (typeof value !== 'object' || value === null) {
     return null;
