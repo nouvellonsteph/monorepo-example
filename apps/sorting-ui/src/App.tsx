@@ -242,7 +242,7 @@ export function App() {
         </div>
         <div className="metric">
           <span>Average latency</span>
-          <strong>{averageMs ? `${averageMs.toFixed(1)} ms` : '--'}</strong>
+          <strong>{history.length ? `${averageMs.toFixed(1)} ms` : '--'}</strong>
         </div>
         <div className="metric">
           <span>Within deadline</span>
