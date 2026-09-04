@@ -1,0 +1,16 @@
+{
+  "name": "@monorepo-example/operations-events",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@monorepo-example/contracts": "*"
+  },
+  "scripts": {
+    "dev": "wrangler dev -c wrangler.jsonc",
+    "deploy": "wrangler deploy -c wrangler.jsonc",
+    "dry-run": "wrangler deploy -c wrangler.jsonc --dry-run",
+    "typecheck": "tsc -p tsconfig.json",
+    "types": "wrangler types -c wrangler.jsonc"
+  }
+}

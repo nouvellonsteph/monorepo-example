@@ -1,0 +1,33 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "monorepo-example-sorting-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-04",
+  "compatibility_flags": ["nodejs_compat"],
+  "services": [
+    {
+      "binding": "ROUTING_ENGINE",
+      "service": "monorepo-example-routing-engine"
+    },
+    {
+      "binding": "OPERATIONS_EVENTS",
+      "service": "monorepo-example-operations-events"
+    }
+  ],
+  "vars": {
+    "DECISION_DEADLINE_MS": "2000",
+    "ENVIRONMENT": "production"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+      "head_sampling_rate": 1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 1
+    }
+  }
+}

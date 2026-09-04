@@ -1,0 +1,27 @@
+{
+  "name": "workers-monorepo-example",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "wrangler dev -c apps/sorting-api/wrangler.jsonc -c apps/routing-engine/wrangler.jsonc -c apps/operations-events/wrangler.jsonc",
+    "demo": "node scripts/demo.mjs",
+    "types": "npm run types --workspaces --if-present",
+    "typecheck": "tsc -p tsconfig.json && npm run typecheck --workspaces --if-present",
+    "test": "vitest run",
+    "check": "npm run types && npm run typecheck && npm test",
+    "dry-run": "npm run dry-run --workspaces --if-present",
+    "deploy:sorting-api": "npm run deploy --workspace @monorepo-example/sorting-api",
+    "deploy:routing-engine": "npm run deploy --workspace @monorepo-example/routing-engine",
+    "deploy:operations-events": "npm run deploy --workspace @monorepo-example/operations-events"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4",
+    "wrangler": "4.129.0"
+  }
+}

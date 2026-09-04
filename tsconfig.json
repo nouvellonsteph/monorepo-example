@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "lib": ["ES2023", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "strict": true,
+    "target": "ES2023",
+    "types": ["node", "vitest/globals"]
+  },
+  "include": [
+    "apps/routing-engine/src/routing.ts",
+    "apps/routing-engine/src/routing.test.ts",
+    "packages/**/*.ts"
+  ]
+}
